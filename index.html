@@ -7,50 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <style type="text/css">
-        body{
-            font-family: sans-serif;
-        }
-        #header{
-            width: 100%;
-            background-color: #EEEEEE;
-            height:40px;
-        }
-        #logo{
-            float: left;
-            font-weight: bold;
-            font-size: 125%;
-            padding:5px;
-            width: 275px;
-
-        }
-        .btn{
-            float:left;
-            margin: 5px;
-        }
-        .active{
-            background-color: #E8F2FF;
-        }
-        textarea{
-            resize: none;
-            border-color: grey;
-            border-top: none;
-        }
-        .panel {
-
-            float:left;
-            border-left: none;
-
-            border-color: grey;
-        }
-        .hidden {
-
-            display: none;
-
-        }
-        #iframe
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <div id="header">
@@ -74,37 +31,7 @@
 
     <iframe id="outputPanel" class="panel"></iframe>
 </div>
-<script type="text/javascript">
-    function updateOutput() {
-
-        $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
-
-        document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
-
-
-
-    }
-    $(".btn").click(function(){
-        $(this).toggleClass("active");
-        var panelId = $(this).attr("id") + "Panel";
-        $("#" + panelId).toggleClass("hidden");
-        var numberOfActivePanels = 4 - $('.hidden').length;
-        $(".panel").width(($(window).width() / numberOfActivePanels) - 10);
-
-    });
-    $(".panel").height($(window).height() - $("#header").height() - 18);
-
-    $(".panel").width(($(window).width() / 2) - 10);
-
-    updateOutput();
-
-    $("textarea").on('change keyup paste', function() {
-
-        updateOutput();
-
-
-    });
-
+<script type="text/javascript" src="index.js">
 </script>
 </body>
 </html>
