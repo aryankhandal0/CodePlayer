@@ -1,0 +1,40 @@
+body{
+    font-family: sans-serif;
+}
+#header{
+    width: 100%;
+    background-color: #EEEEEE;
+    height:40px;
+}
+#logo{
+    float: left;
+    font-weight: bold;
+    font-size: 125%;
+    padding:5px;
+    width: 275px;
+
+}
+.btn{
+    float:left;
+    margin: 5px;
+}
+.active{
+    background-color: #E8F2FF;
+}
+textarea{
+    resize: none;
+    border-color: grey;
+    border-top: none;
+}
+.panel {
+
+    float:left;
+    border-left: none;
+
+    border-color: grey;
+}
+.hidden {
+
+    display: none;
+
+}
